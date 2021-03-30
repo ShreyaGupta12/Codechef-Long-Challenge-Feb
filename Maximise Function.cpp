@@ -1,4 +1,3 @@
-C++ Solution
 #include <iostream>
 using namespace std;
 
@@ -20,8 +19,3 @@ int main() {
 	}
 	return 0;
 }
-Python Solution
-for _ in range(int(input())):
-    n=int(input())
-    a=list(map(int,input().split()))
-    print(2*(max(a)-min(a)))
