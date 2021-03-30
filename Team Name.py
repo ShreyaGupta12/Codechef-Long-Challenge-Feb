@@ -1,4 +1,3 @@
-Python Solution
 def distinct(l1, l2):
     s=len(set(l1+l2))
     return s
