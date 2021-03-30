@@ -1,4 +1,3 @@
-Python Solution
 def time_in_range(start, end, x):
     if start <= end:
         return start <= x <= end
