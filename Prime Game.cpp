@@ -1,12 +1,9 @@
-C++ Solution
 #include<bits/stdc++.h>
 #define int long long int
 #define ismain ios_base::sync_with_stdio(false);cin.tie(0);
 using namespace std;
-
 const int N = 1e6+5;
 int res[N];
-
 void isprime()
 {
     vector<int>vect;
@@ -36,9 +33,7 @@ void isprime()
             ++it;
         }
         res[i] = cnt;
-    }
-}
-
+    }}
 signed main()
 {
     ismain;
