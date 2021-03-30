@@ -20,7 +20,6 @@ void getrev(int L){
 	for(int i = 1; i < d; ++ i)
 		rev[i] = ((rev[i >> 1] >> 1) | (i & 1 ? half : 0));
 }
-
 void ntt_core(int *a, int *wu){
 	for(int i = 0 ; i < d ; ++ i)
 		if(rev[i] > i)
@@ -31,21 +30,14 @@ void ntt_core(int *a, int *wu){
 				int a1 = a[j + k], a2 = 1ll * a[j + k + i] * wu[i + k] % MOD;
 				a[j + k] = (a1 + a2) % MOD;
 				a[j + k + i] = (a1 + MOD - a2) % MOD;
-			}
-	
-}
-
+			}}
 void intt(int *a, int *wu){
 	ntt_core(a, wu);
 	int c = fpw(d , MOD - 2);
 	for(int i = 0 ; i < d ; ++ i)
 		a[i] = 1ll * a[i] * c % MOD;
 }
-
-void ntt(int *a, int *wu){
-	ntt_core(a, wu);
-}
-
+void ntt(int *a, int *wu){ntt_core(a, wu);}
 void init(){
 	getrev(n + 1);
 	int c = fpw(g , (MOD - 1) / d);
@@ -70,14 +62,11 @@ void init(){
 		ifac[i] = 1ll * ifac[i - 1] * ifac[i] % MOD;
 	pw2[0] = 1;
 	for(int i = 1 ; i <= 30 ; ++ i)
-		pw2[i] = 1ll * pw2[i - 1] * 2 % MOD;
-}
-
+		pw2[i] = 1ll * pw2[i - 1] * 2 % MOD;}
 int C(int x , int y){
 	if(x < y || y < 0) return 0;
 	return 1ll * fac[x] * ifac[y] % MOD * ifac[x - y] % MOD;
 }
-
 int v[MAXN];
 int a[MAXN] , b[MAXN], c[MAXN];
 int ans[MAXN];
